@@ -76,6 +76,31 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
+
+        /* hide toggle on mobile css */
+        .hide-on-mobile {
+            display: none;
+        }
+
+        /* Show the element on larger screens */
+        @media (min-width: 768px) {
+            .hide-on-mobile {
+                display: block;
+            }
+        }
+
+        /* old toggle only show on mobile  */
+        .show-on-mobile {
+            display: block;
+            /* Visible on mobile */
+        }
+
+        /* Hide the element on larger screens */
+        @media (min-width: 768px) {
+            .show-on-mobile {
+                display: none;
+            }
+        }
     </style>
 
 </head>
@@ -83,7 +108,7 @@
 
 <body>
     <!--side menu new-->
-    <div class="sidebar close">
+    <div class="sidebar close hide-on-mobile">
         <div class="logo-details">
             <h3 class="mx-3 bg-white rounded text-primary">tbis</h3>
         </div>
@@ -141,8 +166,8 @@
         </div>
     </div> -->
 
-    <!-- old Toggle Button -->
-    <!-- <nav class="navbar navbar-light bg-light ">
+    <!-- old Toggle Button for mobile view-->
+    <nav class="navbar navbar-light bg-light show-on-mobile ">
         <div class="container-fluid">
             <button class="btn btn-primary bg-white text-primary" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
@@ -150,7 +175,7 @@
 
             </button>
         </div>
-    </nav> -->
+    </nav>
 
     <!-- header -->
     <div class="d-flex justify-content-start mx-5 m-3">
